@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UnitConvertorAbhi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbE-k7-7zj">
+                                <rect key="frame" x="20" y="272" width="374" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yrl-fR-DTK">
+                                <rect key="frame" x="27" y="74" width="360" height="29"/>
+                                <segments>
+                                    <segment title="Farenheit"/>
+                                    <segment title="Celcius"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="v6h-Bj-2Qu"/>
+                                </connections>
+                            </segmentedControl>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rsv-ME-AUq">
+                                <rect key="frame" x="27" y="636" width="360" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Dv4-4v-ebu" id="kE1-0a-Pbk"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yrl-fR-DTK" secondAttribute="trailing" constant="27" id="GBQ-gp-cL4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rsv-ME-AUq" secondAttribute="trailing" constant="27" id="Jd8-5X-69X"/>
+                            <constraint firstItem="wbE-k7-7zj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="228" id="OA4-NS-5Wk"/>
+                            <constraint firstItem="rsv-ME-AUq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="27" id="P1f-W6-Bkw"/>
+                            <constraint firstItem="yrl-fR-DTK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="27" id="SkS-d9-RGe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wbE-k7-7zj" secondAttribute="trailing" constant="20" id="WTW-4P-vMU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rsv-ME-AUq" secondAttribute="bottom" constant="10" id="bz4-ug-7DK"/>
+                            <constraint firstItem="wbE-k7-7zj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="vDJ-jN-QR9"/>
+                            <constraint firstItem="yrl-fR-DTK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="z15-Ui-82l"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="segmentedControl" destination="yrl-fR-DTK" id="1BU-5G-T7p"/>
+                        <outlet property="tempLabel" destination="wbE-k7-7zj" id="u3z-uI-fZG"/>
+                        <outlet property="tempPicker" destination="rsv-ME-AUq" id="vGD-mw-Qcx"/>
+                        <outlet property="temperatureRange" destination="Dv4-4v-ebu" id="GJz-1W-h6L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="Dv4-4v-ebu" userLabel="TemperatureRange" customClass="TemperatureRange" customModule="UnitConvertorAbhi" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+        </scene>
+    </scenes>
+</document>
